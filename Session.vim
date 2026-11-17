@@ -6,7 +6,7 @@ imap <M-Bslash> <Plug>(codeium-complete)
 imap <M-[> <Plug>(codeium-previous)
 imap <M-]> <Plug>(codeium-next-or-complete)
 imap <Plug>(codeium-complete) <Cmd>call codeium#Complete()<NL>imap <Plug>(codeium-previous) <Cmd>call codeium#CycleCompletions(-1)<NL>imap <Plug>(codeium-next-or-complete) <Cmd>call codeium#CycleOrComplete()<NL>imap <Plug>(codeium-next) <Cmd>call codeium#CycleCompletions(1)<NL>imap <Plug>(codeium-dismiss) <Cmd>call codeium#Clear()<NL>imap S <Plug>ISurround
-imap <Plug>(codeium-previous) <Cmd>call codeium#CycleCompletions(-1)
+imap <Plug>(codeium-previous) <Cmd>call codeium#CycleCompletions(-1)<NL>imap <Plug>(codeium-next-or-complete) <Cmd>call codeium#CycleOrComplete()<NL>imap <Plug>(codeium-next) <Cmd>call codeium#CycleCompletions(1)<NL>imap <Plug>(codeium-dismiss) <Cmd>call codeium#Clear()<NL>imap S <Plug>ISurround
 imap <Plug>(codeium-next-or-complete) <Cmd>call codeium#CycleOrComplete()
 imap <Plug>(codeium-next) <Cmd>call codeium#CycleCompletions(1)
 imap <Plug>(codeium-dismiss) <Cmd>call codeium#Clear()
@@ -14,8 +14,7 @@ imap <C-G>S <Plug>ISurround
 imap <C-G>s <Plug>Isurround
 imap <C-S> <Plug>Isurround
 inoremap <Plug>(emmet-merge-lines) =emmet#util#closePopup()<NL>=emmet#mergeLines()<NL>inoremap <Plug>(emmet-anchorize-summary) =emmet#util#closePopup()<NL>=emmet#anchorizeURL(1)<NL>inoremap <Plug>(emmet-anchorize-url) =emmet#util#closePopup()<NL>=emmet#anchorizeURL(0)<NL>inoremap <Plug>(emmet-remove-tag) =emmet#util#closePopup()<NL>=emmet#removeTag()<NL>inoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()<NL>inoremap <Plug>(emmet-toggle-comment) =emmet#util#closePopup()<NL>=emmet#toggleComment()<NL>inoremap <Plug>(emmet-image-encode) =emmet#util#closePopup()<NL>=emmet#imageEncode()<NL>inoremap <Plug>(emmet-image-size) =emmet#util#closePopup()<NL>=emmet#imageSize()<NL>inoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)<NL>inoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)<NL>inoremap <Plug>(emmet-move-prev) =emmet#util#closePopup()<NL>=emmet#moveNextPrev(1)<NL>inoremap <Plug>(emmet-move-next) =emmet#util#closePopup()<NL>=emmet#moveNextPrev(0)<NL>inoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>inoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>inoremap <Plug>(emmet-update-tag) =emmet#util#closePopup()<NL>=emmet#updateTag()<NL>inoremap <Plug>(emmet-expand-word) =emmet#util#closePopup()<NL>=emmet#expandAbbr(1,"")<NL>inoremap <Plug>(emmet-expand-abbr) =emmet#util#closePopup()<NL>=emmet#expandAbbr(0,"")<NL>inoremap <Plug>(operator-sandwich-gv) gv
-inoremap <Plug>(emmet-anchorize-summary) =emmet#util#closePopup()
-=emmet#anchorizeURL(1)
+inoremap <Plug>(emmet-anchorize-summary) =emmet#util#closePopup()<NL>=emmet#anchorizeURL(1)<NL>inoremap <Plug>(emmet-anchorize-url) =emmet#util#closePopup()<NL>=emmet#anchorizeURL(0)<NL>inoremap <Plug>(emmet-remove-tag) =emmet#util#closePopup()<NL>=emmet#removeTag()<NL>inoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()<NL>inoremap <Plug>(emmet-toggle-comment) =emmet#util#closePopup()<NL>=emmet#toggleComment()<NL>inoremap <Plug>(emmet-image-encode) =emmet#util#closePopup()<NL>=emmet#imageEncode()<NL>inoremap <Plug>(emmet-image-size) =emmet#util#closePopup()<NL>=emmet#imageSize()<NL>inoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)<NL>inoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)<NL>inoremap <Plug>(emmet-move-prev) =emmet#util#closePopup()<NL>=emmet#moveNextPrev(1)<NL>inoremap <Plug>(emmet-move-next) =emmet#util#closePopup()<NL>=emmet#moveNextPrev(0)<NL>inoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>inoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>inoremap <Plug>(emmet-update-tag) =emmet#util#closePopup()<NL>=emmet#updateTag()<NL>inoremap <Plug>(emmet-expand-word) =emmet#util#closePopup()<NL>=emmet#expandAbbr(1,"")<NL>inoremap <Plug>(emmet-expand-abbr) =emmet#util#closePopup()<NL>=emmet#expandAbbr(0,"")<NL>inoremap <Plug>(operator-sandwich-gv) gv
 inoremap <Plug>(emmet-anchorize-url) =emmet#util#closePopup()
 =emmet#anchorizeURL(0)
 inoremap <Plug>(emmet-remove-tag) =emmet#util#closePopup()
@@ -56,7 +55,7 @@ nnoremap <silent> -cp :call CenterParagraph()<NL>map -y <Plug>(operator-poweryan
 map -y <Plug>(operator-poweryank-osc52)
 nmap <silent> -x <Plug>(devdocs-under-cursor)
 nnoremap -e :ALEGoToImplementation<NL>nnoremap -d :ALEGoToDefinition<NL>nnoremap -a :ALEHover<NL>nnoremap -ø :Mdto docx<NL>nnoremap -æ :Mdto pdf<NL>nnoremap -p :call WlTable()<NL>nnoremap -bl :ls<NL>nnoremap -bq :bp | bd #<NL>nmap -h :bprevious<NL>nmap -l :bnext<NL>nmap -t :call NewBufferWithoutNerdTree()<NL>nmap -9 :blast<NL>nmap -8 <Plug>AirlineSelectTab8
-nnoremap -d :ALEGoToDefinition
+nnoremap -d :ALEGoToDefinition<NL>nnoremap -a :ALEHover<NL>nnoremap -ø :Mdto docx<NL>nnoremap -æ :Mdto pdf<NL>nnoremap -p :call WlTable()<NL>nnoremap -bl :ls<NL>nnoremap -bq :bp | bd #<NL>nmap -h :bprevious<NL>nmap -l :bnext<NL>nmap -t :call NewBufferWithoutNerdTree()<NL>nmap -9 :blast<NL>nmap -8 <Plug>AirlineSelectTab8
 nnoremap -a :ALEHover
 nnoremap -ø :Mdto docx
 nnoremap -æ :Mdto pdf
@@ -76,12 +75,12 @@ nmap -3 <Plug>AirlineSelectTab3
 nmap -2 <Plug>AirlineSelectTab2
 nmap -1 <Plug>AirlineSelectTab1
 nmap -q :Bonly<NL>nmap -w :bp|bd #<NL>nnoremap -n :call ToggleNERDTree()<NL>nmap -r :NERDTreeFocus<NL>R
-nmap -w :bp|bd #
+nmap -w :bp|bd #<NL>nnoremap -n :call ToggleNERDTree()<NL>nmap -r :NERDTreeFocus<NL>R
 nnoremap -n :call ToggleNERDTree()
 nmap -r :NERDTreeFocus
 R
 nnoremap -å :Combine<NL>nnoremap <silent> -z :call GoyoOpenWithoutNerdTree()<NL>imap ¨m <Plug>(emmet-merge-lines)
-nnoremap <silent> -z :call GoyoOpenWithoutNerdTree()
+nnoremap <silent> -z :call GoyoOpenWithoutNerdTree()<NL>imap ¨m <Plug>(emmet-merge-lines)
 imap ¨m <Plug>(emmet-merge-lines)
 imap ¨A <Plug>(emmet-anchorize-summary)
 imap ¨a <Plug>(emmet-anchorize-url)
@@ -103,7 +102,7 @@ imap Ý <Plug>(codeium-next-or-complete)
 nnoremap D "_D
 xmap S <Plug>VSurround
 nnoremap <silent> [unite]cx :exec "Unite  -default-action=start citation/key:" . escape(input('Search Key : '),' ') <NL>nnoremap <silent> [unite]c :Unite -buffer-name=citation-start-insert -default-action=append      citation/key<NL>nnoremap [unite] <Nop>
-nnoremap <silent> [unite]c :Unite -buffer-name=citation-start-insert -default-action=append      citation/key
+nnoremap <silent> [unite]c :Unite -buffer-name=citation-start-insert -default-action=append      citation/key<NL>nnoremap [unite] <Nop>
 nnoremap [unite] <Nop>
 vmap <silent> \V <Plug>(expand_region_shrink)
 nmap <silent> \V <Plug>(expand_region_shrink)
@@ -141,14 +140,13 @@ nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
 xnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()<NL>nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<NL>onoremap <silent> <Plug>(operator-poweryank-osc52) g@
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<NL>onoremap <silent> <Plug>(operator-poweryank-osc52) g@
 onoremap <silent> <Plug>(operator-poweryank-osc52) g@
 xnoremap <silent> <Plug>(operator-poweryank-osc52) :call poweryank#opfunc_osc52(visualmode(), 1)<NL>nnoremap <silent> <Plug>(operator-poweryank-osc52) :set opfunc=poweryank#opfunc_osc52<NL>g@
-nnoremap <silent> <Plug>(operator-poweryank-osc52) :set opfunc=poweryank#opfunc_osc52
-g@
+nnoremap <silent> <Plug>(operator-poweryank-osc52) :set opfunc=poweryank#opfunc_osc52<NL>g@
 nnoremap <silent> <Plug>SurroundRepeat .
 vnoremap <Plug>(emmet-code-pretty) :call emmet#codePretty()<NL>nnoremap <Plug>(emmet-merge-lines) :call emmet#mergeLines()<NL>nnoremap <Plug>(emmet-anchorize-summary) :call emmet#anchorizeURL(1)<NL>nnoremap <Plug>(emmet-anchorize-url) :call emmet#anchorizeURL(0)<NL>nnoremap <Plug>(emmet-remove-tag) :call emmet#removeTag()<NL>nnoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()<NL>nnoremap <Plug>(emmet-toggle-comment) :call emmet#toggleComment()<NL>nnoremap <Plug>(emmet-image-encode) :call emmet#imageEncode()<NL>nnoremap <Plug>(emmet-image-size) :call emmet#imageSize()<NL>nnoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)<NL>nnoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)<NL>nnoremap <Plug>(emmet-move-prev) :call emmet#moveNextPrev(1)<NL>nnoremap <Plug>(emmet-move-next) :call emmet#moveNextPrev(0)<NL>vnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>nnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>vnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>nnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>nnoremap <Plug>(emmet-update-tag) :call emmet#updateTag()<NL>nnoremap <Plug>(emmet-expand-word) :call emmet#expandAbbr(1,"")<NL>vnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(2,"")<NL>nnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(3,"")<NL>nnoremap <silent>  :CtrlP<NL>vnoremap <Plug>OSCYankVisual :OSCYankVisual<NL>nnoremap <expr> <Plug>OSCYankOperator OSCYankOperator()
-nnoremap <Plug>(emmet-merge-lines) :call emmet#mergeLines()
+nnoremap <Plug>(emmet-merge-lines) :call emmet#mergeLines()<NL>nnoremap <Plug>(emmet-anchorize-summary) :call emmet#anchorizeURL(1)<NL>nnoremap <Plug>(emmet-anchorize-url) :call emmet#anchorizeURL(0)<NL>nnoremap <Plug>(emmet-remove-tag) :call emmet#removeTag()<NL>nnoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()<NL>nnoremap <Plug>(emmet-toggle-comment) :call emmet#toggleComment()<NL>nnoremap <Plug>(emmet-image-encode) :call emmet#imageEncode()<NL>nnoremap <Plug>(emmet-image-size) :call emmet#imageSize()<NL>nnoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)<NL>nnoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)<NL>nnoremap <Plug>(emmet-move-prev) :call emmet#moveNextPrev(1)<NL>nnoremap <Plug>(emmet-move-next) :call emmet#moveNextPrev(0)<NL>vnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>nnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)<NL>vnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>nnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)<NL>nnoremap <Plug>(emmet-update-tag) :call emmet#updateTag()<NL>nnoremap <Plug>(emmet-expand-word) :call emmet#expandAbbr(1,"")<NL>vnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(2,"")<NL>nnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(3,"")<NL>nnoremap <silent>  :CtrlP<NL>vnoremap <Plug>OSCYankVisual :OSCYankVisual<NL>nnoremap <expr> <Plug>OSCYankOperator OSCYankOperator()
 nnoremap <Plug>(emmet-anchorize-summary) :call emmet#anchorizeURL(1)
 nnoremap <Plug>(emmet-anchorize-url) :call emmet#anchorizeURL(0)
 nnoremap <Plug>(emmet-remove-tag) :call emmet#removeTag()
@@ -171,7 +169,7 @@ nnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(3,"")
 nnoremap <silent> <C-P> :CtrlP
 vnoremap <Plug>OSCYankVisual :OSCYankVisual
 nnoremap <expr> <Plug>OSCYankOperator OSCYankOperator()
-nnoremap <silent> <Plug>(devdocs-under-cursor) :call devdocs#open(expand('<cword>'), &l:ft)
+nnoremap <silent> <Plug>(devdocs-under-cursor-all) :call devdocs#open(expand('<cword>'))
 noremap <SNR>36_DashGlobalSearch :Dash!
 noremap <SNR>36_DashSearch :Dash
 xnoremap <silent> <Plug>(expand_region_shrink) :call expand_region#next('v', '-')
@@ -205,7 +203,7 @@ omap <silent> <Plug>(sandwich-add) <Plug>(operator-sandwich-add)
 xmap <silent> <Plug>(sandwich-add) <Plug>(operator-sandwich-add)
 nmap <silent> <Plug>(sandwich-add) <Plug>(operator-sandwich-add)
 xnoremap <silent> <Plug>(textobj-sandwich-tag-a) :call sandwich#magicchar#t#at()<NL>xnoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()<NL>onoremap <silent> <Plug>(textobj-sandwich-tag-a) :call sandwich#magicchar#t#at()<NL>onoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()<NL>xnoremap <silent> <Plug>(textobj-sandwich-tagname-a) :call sandwich#magicchar#t#a()<NL>xnoremap <silent> <Plug>(textobj-sandwich-tagname-i) :call sandwich#magicchar#t#i()<NL>onoremap <silent> <Plug>(textobj-sandwich-tagname-a) :call sandwich#magicchar#t#a()<NL>onoremap <silent> <Plug>(textobj-sandwich-tagname-i) :call sandwich#magicchar#t#i()<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-a) :call sandwich#magicchar#f#a('x')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-ap) :call sandwich#magicchar#f#ap('x')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-a) :call sandwich#magicchar#f#a('o')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-ap) :call sandwich#magicchar#f#ap('o')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-i) :call sandwich#magicchar#f#i('x')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-ip) :call sandwich#magicchar#f#ip('x')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-i) :call sandwich#magicchar#f#i('o')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-ip) :call sandwich#magicchar#f#ip('o')<NL>nnoremap <Plug>(operator-sandwich-gv) gv
-xnoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()
+xnoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()<NL>onoremap <silent> <Plug>(textobj-sandwich-tag-a) :call sandwich#magicchar#t#at()<NL>onoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()<NL>xnoremap <silent> <Plug>(textobj-sandwich-tagname-a) :call sandwich#magicchar#t#a()<NL>xnoremap <silent> <Plug>(textobj-sandwich-tagname-i) :call sandwich#magicchar#t#i()<NL>onoremap <silent> <Plug>(textobj-sandwich-tagname-a) :call sandwich#magicchar#t#a()<NL>onoremap <silent> <Plug>(textobj-sandwich-tagname-i) :call sandwich#magicchar#t#i()<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-a) :call sandwich#magicchar#f#a('x')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-ap) :call sandwich#magicchar#f#ap('x')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-a) :call sandwich#magicchar#f#a('o')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-ap) :call sandwich#magicchar#f#ap('o')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-i) :call sandwich#magicchar#f#i('x')<NL>xnoremap <silent> <Plug>(textobj-sandwich-function-ip) :call sandwich#magicchar#f#ip('x')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-i) :call sandwich#magicchar#f#i('o')<NL>onoremap <silent> <Plug>(textobj-sandwich-function-ip) :call sandwich#magicchar#f#ip('o')<NL>nnoremap <Plug>(operator-sandwich-gv) gv
 onoremap <silent> <Plug>(textobj-sandwich-tag-a) :call sandwich#magicchar#t#at()
 onoremap <silent> <Plug>(textobj-sandwich-tag-i) :call sandwich#magicchar#t#it()
 xnoremap <silent> <Plug>(textobj-sandwich-tagname-a) :call sandwich#magicchar#t#a()
@@ -223,7 +221,7 @@ onoremap <silent> <Plug>(textobj-sandwich-function-ip) :call sandwich#magiccha
 nnoremap <Plug>(operator-sandwich-gv) gv
 noremap <Plug>(operator-sandwich-g@) g@
 noremap <silent> <Plug>(operator-sandwich-replace-visualrepeat) :call operator#sandwich#visualrepeat('replace')<NL>noremap <silent> <Plug>(operator-sandwich-delete-visualrepeat) :call operator#sandwich#visualrepeat('delete')<NL>noremap <silent> <Plug>(operator-sandwich-add-visualrepeat) :call operator#sandwich#visualrepeat('add')<NL>nnoremap <silent> <expr> <Plug>(operator-sandwich-dot) operator#sandwich#dot()
-noremap <silent> <Plug>(operator-sandwich-delete-visualrepeat) :call operator#sandwich#visualrepeat('delete')
+noremap <silent> <Plug>(operator-sandwich-delete-visualrepeat) :call operator#sandwich#visualrepeat('delete')<NL>noremap <silent> <Plug>(operator-sandwich-add-visualrepeat) :call operator#sandwich#visualrepeat('add')<NL>nnoremap <silent> <expr> <Plug>(operator-sandwich-dot) operator#sandwich#dot()
 noremap <silent> <Plug>(operator-sandwich-add-visualrepeat) :call operator#sandwich#visualrepeat('add')
 nnoremap <silent> <expr> <Plug>(operator-sandwich-dot) operator#sandwich#dot()
 nnoremap <silent> <expr> <Plug>(operator-sandwich-predot) operator#sandwich#predot()
@@ -231,7 +229,7 @@ onoremap <silent> <expr> <Plug>(operator-sandwich-squash-count) operator#sandwic
 onoremap <silent> <expr> <Plug>(operator-sandwich-release-count) operator#sandwich#release_count()
 onoremap <silent> <expr> <Plug>(operator-sandwich-synchro-count) operator#sandwich#synchro_count()
 xnoremap <silent> <Plug>(operator-sandwich-replace-query1st) :call operator#sandwich#query1st('replace', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-replace-query1st) :call operator#sandwich#query1st('replace', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-replace-pre) :call operator#sandwich#prerequisite('replace', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-replace-pre) :call operator#sandwich#prerequisite('replace', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-delete-pre) :call operator#sandwich#prerequisite('delete', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-delete-pre) :call operator#sandwich#prerequisite('delete', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-add-pre) :call operator#sandwich#prerequisite('add', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-add-pre) :call operator#sandwich#prerequisite('add', 'n')<NL>omap <silent> <Plug>(operator-sandwich-replace) <Plug>(operator-sandwich-g@)
-nnoremap <silent> <Plug>(operator-sandwich-replace-query1st) :call operator#sandwich#query1st('replace', 'n')
+nnoremap <silent> <Plug>(operator-sandwich-replace-query1st) :call operator#sandwich#query1st('replace', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-replace-pre) :call operator#sandwich#prerequisite('replace', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-replace-pre) :call operator#sandwich#prerequisite('replace', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-delete-pre) :call operator#sandwich#prerequisite('delete', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-delete-pre) :call operator#sandwich#prerequisite('delete', 'n')<NL>xnoremap <silent> <Plug>(operator-sandwich-add-pre) :call operator#sandwich#prerequisite('add', 'x')<NL>nnoremap <silent> <Plug>(operator-sandwich-add-pre) :call operator#sandwich#prerequisite('add', 'n')<NL>omap <silent> <Plug>(operator-sandwich-replace) <Plug>(operator-sandwich-g@)
 xnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'x')
 nnoremap <silent> <Plug>(operator-sandwich-add-query1st) :call operator#sandwich#query1st('add', 'n')
 xnoremap <silent> <Plug>(operator-sandwich-replace-pre) :call operator#sandwich#prerequisite('replace', 'x')
@@ -250,7 +248,7 @@ omap <silent> <Plug>(operator-sandwich-add) <Plug>(operator-sandwich-g@)
 xmap <silent> <Plug>(operator-sandwich-add) <Plug>(operator-sandwich-add-pre)<Plug>(operator-sandwich-gv)<Plug>(operator-sandwich-g@)
 nmap <silent> <Plug>(operator-sandwich-add) <Plug>(operator-sandwich-add-pre)<Plug>(operator-sandwich-g@)
 nnoremap <silent> <Plug>(ale_info_preview) :ALEInfo -preview<NL>nnoremap <silent> <Plug>(ale_info_clipboard) :ALEInfo -clipboard<NL>nnoremap <silent> <Plug>(ale_info_echo) :ALEInfo -echo<NL>nnoremap <silent> <Plug>(ale_info) :ALEInfo<NL>nnoremap <silent> <Plug>(ale_repeat_selection) :ALERepeatSelection<NL>nnoremap <silent> <Plug>(ale_code_action) :ALECodeAction<NL>nnoremap <silent> <Plug>(ale_filerename) :ALEFileRename<NL>nnoremap <silent> <Plug>(ale_rename) :ALERename<NL>nnoremap <silent> <Plug>(ale_import) :ALEImport<NL>nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation<NL>nnoremap <silent> <Plug>(ale_hover) :ALEHover<NL>nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_vsplit) :ALEGoToImplementation -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_split) :ALEGoToImplementation -split<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_tab) :ALEGoToImplementation -tab<NL>nnoremap <silent> <Plug>(ale_go_to_implementation) :ALEGoToImplementation<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinition -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinition -split<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinition -tab<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinition -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_split) :ALEGoToDefinition -split<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_tab) :ALEGoToDefinition -tab<NL>nnoremap <silent> <Plug>(ale_go_to_definition) :ALEGoToDefinition<NL>nnoremap <silent> <Plug>(ale_fix) :ALEFix<NL>nnoremap <silent> <Plug>(ale_detail) :ALEDetail<NL>nnoremap <silent> <Plug>(ale_lint) :ALELint<NL>nnoremap <silent> <Plug>(ale_reset_buffer) :ALEResetBuffer<NL>nnoremap <silent> <Plug>(ale_disable_buffer) :ALEDisableBuffer<NL>nnoremap <silent> <Plug>(ale_enable_buffer) :ALEEnableBuffer<NL>nnoremap <silent> <Plug>(ale_toggle_buffer) :ALEToggleBuffer<NL>nnoremap <silent> <Plug>(ale_reset) :ALEReset<NL>nnoremap <silent> <Plug>(ale_disable) :ALEDisable<NL>nnoremap <silent> <Plug>(ale_enable) :ALEEnable<NL>nnoremap <silent> <Plug>(ale_toggle) :ALEToggle<NL>nnoremap <silent> <Plug>(ale_last) :ALELast<NL>nnoremap <silent> <Plug>(ale_first) :ALEFirst<NL>nnoremap <silent> <Plug>(ale_next_wrap_warning) :ALENext -wrap -warning<NL>nnoremap <silent> <Plug>(ale_next_warning) :ALENext -warning<NL>nnoremap <silent> <Plug>(ale_next_wrap_error) :ALENext -wrap -error<NL>nnoremap <silent> <Plug>(ale_next_error) :ALENext -error<NL>nnoremap <silent> <Plug>(ale_next_wrap) :ALENextWrap<NL>nnoremap <silent> <Plug>(ale_next) :ALENext<NL>nnoremap <silent> <Plug>(ale_previous_wrap_warning) :ALEPrevious -wrap -warning<NL>nnoremap <silent> <Plug>(ale_previous_warning) :ALEPrevious -warning<NL>nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error<NL>nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error<NL>nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap<NL>nnoremap <silent> <Plug>(ale_previous) :ALEPrevious<NL>xnoremap <silent> <Plug>(Limelight) :Limelight<NL>nnoremap <silent> <Plug>(Limelight) :set opfunc=limelight#operator<NL>g@
-nnoremap <silent> <Plug>(ale_info_clipboard) :ALEInfo -clipboard
+nnoremap <silent> <Plug>(ale_info_clipboard) :ALEInfo -clipboard<NL>nnoremap <silent> <Plug>(ale_info_echo) :ALEInfo -echo<NL>nnoremap <silent> <Plug>(ale_info) :ALEInfo<NL>nnoremap <silent> <Plug>(ale_repeat_selection) :ALERepeatSelection<NL>nnoremap <silent> <Plug>(ale_code_action) :ALECodeAction<NL>nnoremap <silent> <Plug>(ale_filerename) :ALEFileRename<NL>nnoremap <silent> <Plug>(ale_rename) :ALERename<NL>nnoremap <silent> <Plug>(ale_import) :ALEImport<NL>nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation<NL>nnoremap <silent> <Plug>(ale_hover) :ALEHover<NL>nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_vsplit) :ALEGoToImplementation -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_split) :ALEGoToImplementation -split<NL>nnoremap <silent> <Plug>(ale_go_to_implementation_in_tab) :ALEGoToImplementation -tab<NL>nnoremap <silent> <Plug>(ale_go_to_implementation) :ALEGoToImplementation<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinition -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinition -split<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinition -tab<NL>nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinition -vsplit<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_split) :ALEGoToDefinition -split<NL>nnoremap <silent> <Plug>(ale_go_to_definition_in_tab) :ALEGoToDefinition -tab<NL>nnoremap <silent> <Plug>(ale_go_to_definition) :ALEGoToDefinition<NL>nnoremap <silent> <Plug>(ale_fix) :ALEFix<NL>nnoremap <silent> <Plug>(ale_detail) :ALEDetail<NL>nnoremap <silent> <Plug>(ale_lint) :ALELint<NL>nnoremap <silent> <Plug>(ale_reset_buffer) :ALEResetBuffer<NL>nnoremap <silent> <Plug>(ale_disable_buffer) :ALEDisableBuffer<NL>nnoremap <silent> <Plug>(ale_enable_buffer) :ALEEnableBuffer<NL>nnoremap <silent> <Plug>(ale_toggle_buffer) :ALEToggleBuffer<NL>nnoremap <silent> <Plug>(ale_reset) :ALEReset<NL>nnoremap <silent> <Plug>(ale_disable) :ALEDisable<NL>nnoremap <silent> <Plug>(ale_enable) :ALEEnable<NL>nnoremap <silent> <Plug>(ale_toggle) :ALEToggle<NL>nnoremap <silent> <Plug>(ale_last) :ALELast<NL>nnoremap <silent> <Plug>(ale_first) :ALEFirst<NL>nnoremap <silent> <Plug>(ale_next_wrap_warning) :ALENext -wrap -warning<NL>nnoremap <silent> <Plug>(ale_next_warning) :ALENext -warning<NL>nnoremap <silent> <Plug>(ale_next_wrap_error) :ALENext -wrap -error<NL>nnoremap <silent> <Plug>(ale_next_error) :ALENext -error<NL>nnoremap <silent> <Plug>(ale_next_wrap) :ALENextWrap<NL>nnoremap <silent> <Plug>(ale_next) :ALENext<NL>nnoremap <silent> <Plug>(ale_previous_wrap_warning) :ALEPrevious -wrap -warning<NL>nnoremap <silent> <Plug>(ale_previous_warning) :ALEPrevious -warning<NL>nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error<NL>nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error<NL>nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap<NL>nnoremap <silent> <Plug>(ale_previous) :ALEPrevious<NL>xnoremap <silent> <Plug>(Limelight) :Limelight<NL>nnoremap <silent> <Plug>(Limelight) :set opfunc=limelight#operator<NL>g@
 nnoremap <silent> <Plug>(ale_info_echo) :ALEInfo -echo
 nnoremap <silent> <Plug>(ale_info) :ALEInfo
 nnoremap <silent> <Plug>(ale_repeat_selection) :ALERepeatSelection
@@ -368,13 +366,17 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +3 apps/web/src/locales/index.ts
+badd +29 apps/web/src/locales/index.ts
 badd +173 apps/web/src/components/SideNavigation.tsx
-badd +81 apps/web/src/views/auth/login/index.tsx
+badd +51 apps/web/src/views/auth/login/index.tsx
 badd +1 apps/web/src/components/AuthForm.tsx
+badd +303 AGENTS.md
+badd +26 apps/web/src/components/LanguageSelector.tsx
+badd +15 apps/web/src/hooks/useLocalisation.ts
+badd +0 apps/web/src/utils/i18n.ts
 argglobal
 %argdel
-edit apps/web/src/views/auth/login/index.tsx
+edit apps/web/src/utils/i18n.ts
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -395,7 +397,7 @@ exe 'vert 1resize ' . ((&columns * 31 + 76) / 152)
 exe 'vert 2resize ' . ((&columns * 120 + 76) / 152)
 argglobal
 enew
-balt apps/web/src/components/SideNavigation.tsx
+balt apps/web/src/views/auth/login/index.tsx
 let s:cpo_save=&cpo
 set cpo&vim
 nnoremap <buffer> <silent> <NL> :call nerdtree#ui_glue#invokeKeyMap("<C-j>")
@@ -576,7 +578,7 @@ setlocal nowrap
 setlocal wrapmargin=0
 wincmd w
 argglobal
-balt apps/web/src/components/AuthForm.tsx
+balt apps/web/src/hooks/useLocalisation.ts
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -612,8 +614,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'typescriptreact'
-setlocal filetype=typescriptreact
+if &filetype != 'typescript'
+setlocal filetype=typescript
 endif
 setlocal fillchars=
 setlocal fixendofline
@@ -622,7 +624,7 @@ setlocal foldcolumn=2
 setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
-setlocal foldlevel=11
+setlocal foldlevel=3
 setlocal foldmarker={{{,}}}
 set foldmethod=indent
 setlocal foldmethod=indent
@@ -687,8 +689,8 @@ setlocal statusline=%!airline#statusline(2)
 setlocal suffixesadd=.ts,.d.ts,.tsx,.js,.jsx,.cjs,.mjs
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'typescriptreact'
-setlocal syntax=typescriptreact
+if &syntax != 'typescript'
+setlocal syntax=typescript
 endif
 setlocal tabstop=2
 setlocal tagcase=
@@ -710,24 +712,16 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-15
+8
 normal! zo
-32
+9
 normal! zo
-33
-normal! zo
-35
-normal! zo
-36
-normal! zo
-37
-normal! zo
-let s:l = 39 - ((6 * winheight(0) + 22) / 44)
+let s:l = 12 - ((11 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 39
-normal! 026|
+keepjumps 12
+normal! 07|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 76) / 152)

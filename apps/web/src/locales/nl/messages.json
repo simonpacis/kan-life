@@ -3255,7 +3255,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Ga verder met "
@@ -3271,7 +3271,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        364
+        378
       ]
     ],
     "translation": "Ga verder met {0}"
@@ -4632,7 +4632,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "e-mail"
@@ -4788,7 +4788,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        432
+        446
       ]
     ],
     "translation": "Voer je e-mailadres in"
@@ -4800,7 +4800,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        420
+        434
       ]
     ],
     "translation": "Voer je naam in"
@@ -4824,7 +4824,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        446
+        460
       ]
     ],
     "translation": "Voer je wachtwoord in"
@@ -5254,7 +5254,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        300
+        229
       ]
     ],
     "translation": "Inloggen met {0} mislukt. Probeer het opnieuw."
@@ -6978,7 +6978,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "magische link"
@@ -7673,7 +7673,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        379
+        393
       ]
     ],
     "translation": "Er zijn momenteel geen authenticatiemethoden beschikbaar"
@@ -7965,7 +7965,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        410
+        424
       ]
     ],
     "translation": "of"
@@ -8101,7 +8101,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        267
+        306
       ]
     ],
     "translation": "Wachtwoord is vereist om in te loggen."
@@ -8113,7 +8113,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        266
+        305
       ]
     ],
     "translation": "Wachtwoord is vereist om je aan te melden."
@@ -8389,7 +8389,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        436
+        450
       ]
     ],
     "translation": "Voer een geldig e-mailadres in"
@@ -8401,7 +8401,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        424
+        438
       ]
     ],
     "translation": "Voer een geldige naam in"
@@ -8413,7 +8413,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        451
+        465
       ]
     ],
     "translation": "Voer een geldig wachtwoord in"
@@ -8978,6 +8978,18 @@
       ]
     ],
     "translation": "Recruitment"
+  },
+  "L2Ew4x": {
+    "message": "Redirecting to SSO...",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/AuthForm.tsx",
+        355
+      ]
+    ],
+    "translation": ""
   },
   "ekCRTP": {
     "message": "Rejected",
@@ -9698,7 +9710,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        385
+        399
       ]
     ],
     "translation": ""
@@ -10082,7 +10094,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Registreren met "
@@ -10347,11 +10359,11 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        224
+        265
       ],
       [
         "src/components/AuthForm.tsx",
-        241
+        282
       ]
     ],
     "translation": "Succes"
@@ -13187,7 +13199,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        242
+        283
       ]
     ],
     "translation": "Je bent succesvol ingelogd."
@@ -13199,7 +13211,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        225
+        266
       ]
     ],
     "translation": "Je bent succesvol geregistreerd."

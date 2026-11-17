@@ -3255,7 +3255,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Weiter mit "
@@ -3271,7 +3271,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        364
+        378
       ]
     ],
     "translation": "Weiter mit {0}"
@@ -4632,7 +4632,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "E-Mail"
@@ -4788,7 +4788,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        432
+        446
       ]
     ],
     "translation": "Geben Sie Ihre E-Mail-Adresse ein"
@@ -4800,7 +4800,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        420
+        434
       ]
     ],
     "translation": "Geben Sie Ihren Namen ein"
@@ -4824,7 +4824,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        446
+        460
       ]
     ],
     "translation": "Geben Sie Ihr Passwort ein"
@@ -5254,7 +5254,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        300
+        229
       ]
     ],
     "translation": "Anmeldung mit {0} fehlgeschlagen. Bitte versuchen Sie es erneut."
@@ -6978,7 +6978,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "Magic-Link"
@@ -7673,7 +7673,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        379
+        393
       ]
     ],
     "translation": "Derzeit sind keine Authentifizierungsmethoden verfügbar"
@@ -7965,7 +7965,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        410
+        424
       ]
     ],
     "translation": "oder"
@@ -8101,7 +8101,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        267
+        306
       ]
     ],
     "translation": "Passwort ist für die Anmeldung erforderlich."
@@ -8113,7 +8113,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        266
+        305
       ]
     ],
     "translation": "Passwort ist für die Registrierung erforderlich."
@@ -8389,7 +8389,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        436
+        450
       ]
     ],
     "translation": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
@@ -8401,7 +8401,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        424
+        438
       ]
     ],
     "translation": "Bitte geben Sie einen gültigen Namen ein"
@@ -8413,7 +8413,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        451
+        465
       ]
     ],
     "translation": "Bitte geben Sie ein gültiges Passwort ein"
@@ -8978,6 +8978,18 @@
       ]
     ],
     "translation": "Recruiting"
+  },
+  "L2Ew4x": {
+    "message": "Redirecting to SSO...",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/AuthForm.tsx",
+        355
+      ]
+    ],
+    "translation": ""
   },
   "ekCRTP": {
     "message": "Rejected",
@@ -9698,7 +9710,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        385
+        399
       ]
     ],
     "translation": ""
@@ -10082,7 +10094,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Registrieren mit "
@@ -10347,11 +10359,11 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        224
+        265
       ],
       [
         "src/components/AuthForm.tsx",
-        241
+        282
       ]
     ],
     "translation": "Erfolg"
@@ -13187,7 +13199,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        242
+        283
       ]
     ],
     "translation": "Sie wurden erfolgreich angemeldet."
@@ -13199,7 +13211,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        225
+        266
       ]
     ],
     "translation": "Sie haben sich erfolgreich registriert."

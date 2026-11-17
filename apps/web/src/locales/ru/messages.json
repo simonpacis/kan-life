@@ -3255,7 +3255,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Продолжить с "
@@ -3271,7 +3271,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        364
+        378
       ]
     ],
     "translation": "Продолжить с {0}"
@@ -4632,7 +4632,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "email"
@@ -4788,7 +4788,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        432
+        446
       ]
     ],
     "translation": "Введите адрес электронной почты"
@@ -4800,7 +4800,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        420
+        434
       ]
     ],
     "translation": "Введите имя"
@@ -4824,7 +4824,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        446
+        460
       ]
     ],
     "translation": "Введите пароль"
@@ -5254,7 +5254,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        300
+        229
       ]
     ],
     "translation": "Не удалось войти через {0}. Пожалуйста, попробуйте ещё раз."
@@ -6978,7 +6978,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        468
+        482
       ]
     ],
     "translation": "магическая ссылка"
@@ -7673,7 +7673,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        379
+        393
       ]
     ],
     "translation": "В данный момент нет доступных методов аутентификации"
@@ -7965,7 +7965,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        410
+        424
       ]
     ],
     "translation": "или"
@@ -8101,7 +8101,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        267
+        306
       ]
     ],
     "translation": "Для входа требуется пароль."
@@ -8113,7 +8113,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        266
+        305
       ]
     ],
     "translation": "Для регистрации требуется пароль."
@@ -8389,7 +8389,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        436
+        450
       ]
     ],
     "translation": "Пожалуйста, введите корректный адрес электронной почты"
@@ -8401,7 +8401,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        424
+        438
       ]
     ],
     "translation": "Пожалуйста, введите корректное имя"
@@ -8413,7 +8413,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        451
+        465
       ]
     ],
     "translation": "Пожалуйста, введите корректный пароль"
@@ -8978,6 +8978,18 @@
       ]
     ],
     "translation": "Набор персонала"
+  },
+  "L2Ew4x": {
+    "message": "Redirecting to SSO...",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/AuthForm.tsx",
+        355
+      ]
+    ],
+    "translation": ""
   },
   "ekCRTP": {
     "message": "Rejected",
@@ -9698,7 +9710,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        385
+        399
       ]
     ],
     "translation": ""
@@ -10082,7 +10094,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        467
+        481
       ]
     ],
     "translation": "Зарегистрироваться через "
@@ -10347,11 +10359,11 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        224
+        265
       ],
       [
         "src/components/AuthForm.tsx",
-        241
+        282
       ]
     ],
     "translation": "Успех"
@@ -13187,7 +13199,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        242
+        283
       ]
     ],
     "translation": "Вы успешно вошли в систему."
@@ -13199,7 +13211,7 @@
     "origin": [
       [
         "src/components/AuthForm.tsx",
-        225
+        266
       ]
     ],
     "translation": "Вы успешно зарегистрировались."

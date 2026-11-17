@@ -12,6 +12,7 @@ export function useLocalisation() {
 
   const dateLocaleMap: Partial<Record<Locale, DateFnsLocale>> = {
     en: enGB,
+    da,
     fr,
     de,
     es,
