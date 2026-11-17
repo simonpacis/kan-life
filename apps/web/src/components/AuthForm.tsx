@@ -172,6 +172,7 @@ export function Auth({
   const { showPopup } = usePopup();
   const oidcProviderName = "OIDC";
   const passwordRef = useRef<HTMLInputElement | null>(null);
+  const hasAttemptedAutoRedirect = useRef(false);
 
   const redirect = useSearchParams().get("next");
   const callbackURL = callbackURLProp ?? redirect ?? "/boards";
@@ -197,10 +198,50 @@ export function Auth({
     resolver: zodResolver(EmailSchema),
   });
 
-  const { data: socialProviders } = useQuery({
+  const { data: socialProviders, isLoading: isProvidersLoading } = useQuery({
     queryKey: ["social_providers"],
     queryFn: () => authClient.getSocialProviders(),
   });
+
+  const handleLoginWithProvider = async (provider: AuthProvider) => {
+    setIsLoginWithProviderPending(provider);
+    setLoginError(null);
+
+    let error;
+    if (provider === "oidc") {
+      const result = await authClient.signIn.oauth2({
+        providerId: "oidc",
+        callbackURL,
+      });
+      error = result.error;
+    } else {
+      const result = await authClient.signIn.social({
+        provider,
+        callbackURL,
+      });
+      error = result.error;
+    }
+
+    setIsLoginWithProviderPending(null);
+
+    if (error) {
+      setLoginError(
+        t`Failed to login with ${provider.at(0)?.toUpperCase() + provider.slice(1)}. Please try again.`,
+      );
+    }
+  };
+
+  // Automatically trigger OIDC redirect if available
+  useEffect(() => {
+    if (
+      socialProviders?.includes("oidc") &&
+      !hasAttemptedAutoRedirect.current &&
+      !isLoginWithProviderPending
+    ) {
+      hasAttemptedAutoRedirect.current = true;
+      handleLoginWithProvider("oidc");
+    }
+  }, [socialProviders, isLoginWithProviderPending]);
 
   const handleLoginWithEmail = async (
     email: string,
@@ -247,7 +288,6 @@ export function Auth({
         );
       }
     } else {
-      // Only allow magic link if email sending is enabled and not in sign up mode
       if (isCloudEnv || (isEmailSendingEnabled && !isSignUp)) {
         await authClient.signIn.magicLink(
           {
@@ -260,7 +300,6 @@ export function Auth({
           },
         );
       } else {
-        // Provide a clear error feedback when password omitted but magic link unavailable
         setLoginError(
           isSignUp
             ? t`Password is required to sign up.`
@@ -272,38 +311,7 @@ export function Auth({
     setIsLoginWithEmailPending(false);
   };
 
-  const handleLoginWithProvider = async (provider: AuthProvider) => {
-    setIsLoginWithProviderPending(provider);
-    setLoginError(null);
-
-    let error;
-    if (provider === "oidc") {
-      // Use oauth2 signin for OIDC provider
-      const result = await authClient.signIn.oauth2({
-        providerId: "oidc",
-        callbackURL,
-      });
-      error = result.error;
-    } else {
-      // Use social signin for traditional social providers
-      const result = await authClient.signIn.social({
-        provider,
-        callbackURL,
-      });
-      error = result.error;
-    }
-
-    setIsLoginWithProviderPending(null);
-
-    if (error) {
-      setLoginError(
-        t`Failed to login with ${provider.at(0)?.toUpperCase() + provider.slice(1)}. Please try again.`,
-      );
-    }
-  };
-
   const onSubmit = async (values: FormValues) => {
-    // Treat empty password string as undefined to trigger magic link path
     const sanitizedPassword = values.password?.trim()
       ? values.password
       : undefined;
@@ -316,20 +324,14 @@ export function Auth({
     return isCloudEnv || (isEmailSendingEnabled && !isSignUp);
   }, [isCloudEnv, isEmailSendingEnabled, isSignUp]);
 
-  // Determine if we should operate in magic link mode for current form state (login only)
   const isMagicLinkMode = useMemo(() => {
-    // Magic link only viable when email sending enabled AND not sign up.
     if (!isEmailSendingEnabled || isSignUp) return false;
-    // If credentials disabled we always default to magic link.
     if (!isCredentialsEnabled) return true;
-    // Credentials enabled: user chooses magic link by leaving password blank.
     return !password;
   }, [isEmailSendingEnabled, isSignUp, isCredentialsEnabled, password]);
 
-  // Auto-focus password field when an error indicates it's required
   useEffect(() => {
     if (!isCredentialsEnabled) return;
-    // Focus when: sign up and missing password; login error requiring password; validation error on password.
     const pwdEmpty = (password ?? "").length === 0;
     let needsPassword = false;
     if (isSignUp && pwdEmpty) {
@@ -343,6 +345,18 @@ export function Auth({
       passwordRef.current.focus();
     }
   }, [isSignUp, password, loginError, errors.password, isCredentialsEnabled]);
+
+  // Show a clean loading screen while waiting to auto-redirect via OIDC
+  if (isProvidersLoading || socialProviders?.includes("oidc")) {
+    return (
+      <div className="flex flex-col items-center justify-center py-8 space-y-3">
+        <div className="h-6 w-6 animate-spin rounded-full border-2 border-light-1000 border-t-transparent dark:border-dark-1000" />
+        <p className="text-sm text-light-900 dark:text-dark-900">
+          {t`Redirecting to SSO...`}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
